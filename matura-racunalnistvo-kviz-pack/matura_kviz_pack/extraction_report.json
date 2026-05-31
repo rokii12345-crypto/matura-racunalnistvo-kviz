@@ -1,0 +1,33 @@
+{
+  "exams": 9,
+  "shortQuestions": 162,
+  "structuredTasks": 36,
+  "byCategoryShort": {
+    "programiranje_algoritmi": 21,
+    "strojna_oprema_os": 31,
+    "pretvorbe_enote_racunanje": 19,
+    "splosno_racunalnistvo": 24,
+    "omrezja": 19,
+    "podatkovne_baze_sql": 26,
+    "html_css": 22
+  },
+  "byTypeShort": {
+    "short_answer": 17,
+    "multiple_choice_single": 102,
+    "multiple_choice_multi": 11,
+    "sql_open": 9,
+    "html_css_open": 9,
+    "calculation": 13,
+    "code_open": 1
+  },
+  "byModeShort": {
+    "kratki_odgovor": 17,
+    "kviz": 113,
+    "sql_vaja": 9,
+    "html_css_vaja": 9,
+    "racunska_naloga": 13,
+    "programiranje_vaja": 1
+  },
+  "needsVisualContextShort": 19,
+  "errors": []
+}

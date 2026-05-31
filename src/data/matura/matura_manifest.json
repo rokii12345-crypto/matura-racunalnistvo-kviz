@@ -1,0 +1,101 @@
+[
+  {
+    "id": "p231",
+    "code": "P231",
+    "title": "Računalništvo poklicna matura P231",
+    "date": "Četrtek, 8. junij 2023",
+    "year": 2023,
+    "season": "spomladanski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P231-C901-1-1.pdf",
+    "sourceSolutionsPdf": "P231-C901-1-3.pdf"
+  },
+  {
+    "id": "p232",
+    "code": "P232",
+    "title": "Računalništvo poklicna matura P232",
+    "date": "Sreda, 30. avgust 2023",
+    "year": 2023,
+    "season": "jesenski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P232-C901-1-1.pdf",
+    "sourceSolutionsPdf": "P232-C901-1-3.pdf"
+  },
+  {
+    "id": "p233",
+    "code": "P233",
+    "title": "Računalništvo poklicna matura P233",
+    "date": "Petek, 2. februar 2024",
+    "year": 2024,
+    "season": "zimski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P233-C901-1-1.pdf",
+    "sourceSolutionsPdf": "P233-C901-1-3.pdf"
+  },
+  {
+    "id": "p241",
+    "code": "P241",
+    "title": "Računalništvo poklicna matura P241",
+    "date": "Četrtek, 6. junij 2024",
+    "year": 2024,
+    "season": "spomladanski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P241-C901-1-1.pdf",
+    "sourceSolutionsPdf": "P241-C901-1-3.pdf"
+  },
+  {
+    "id": "p242",
+    "code": "P242",
+    "title": "Računalništvo poklicna matura P242",
+    "date": "Četrtek, 29. avgust 2024",
+    "year": 2024,
+    "season": "jesenski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P242-C901-1-1 (1).pdf",
+    "sourceSolutionsPdf": "P242-C901-1-3.pdf"
+  },
+  {
+    "id": "p243",
+    "code": "P243",
+    "title": "Računalništvo poklicna matura P243",
+    "date": "Torek, 4. februar 2025",
+    "year": 2025,
+    "season": "zimski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P243-C901-1-1.pdf",
+    "sourceSolutionsPdf": "P243-C901-1-3.pdf"
+  },
+  {
+    "id": "p251",
+    "code": "P251",
+    "title": "Računalništvo poklicna matura P251",
+    "date": "Petek, 6. junij 2025",
+    "year": 2025,
+    "season": "spomladanski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P251-C901-1-1.pdf",
+    "sourceSolutionsPdf": "P251-C901-1-3.pdf"
+  },
+  {
+    "id": "p252",
+    "code": "P252",
+    "title": "Računalništvo poklicna matura P252",
+    "date": "Torek, 26. avgust 2025",
+    "year": 2025,
+    "season": "jesenski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P252-C901-1-1.pdf",
+    "sourceSolutionsPdf": "P252-C901-1-3.pdf"
+  },
+  {
+    "id": "p253",
+    "code": "P253",
+    "title": "Računalništvo poklicna matura P253",
+    "date": "Torek, 3. februar 2026",
+    "year": 2026,
+    "season": "zimski",
+    "durationMinutes": 120,
+    "sourceExamPdf": "P253-C901-1-1.pdf",
+    "sourceSolutionsPdf": "P253-C901-1-3.pdf"
+  }
+]
