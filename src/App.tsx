@@ -218,6 +218,22 @@ function MetaPill({ children }: { children: string }) {
   return <span className="meta-pill">{children}</span>
 }
 
+function resultMessage(percentage: number) {
+  if (percentage >= 90) {
+    return 'Odličen tempo. To je že zelo blizu maturitetni formi.'
+  }
+
+  if (percentage >= 70) {
+    return 'Dober rezultat. Ponovi še naloge, kjer nisi bil čisto prepričan.'
+  }
+
+  if (percentage >= 50) {
+    return 'Solidna osnova. Največ boš pridobil s ponavljanjem napak.'
+  }
+
+  return 'Začni počasi: reši manjši sklop, preberi razlage in ponovi napačne naloge.'
+}
+
 function App() {
   const [screen, setScreen] = useState<AppScreen>('home')
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -491,6 +507,7 @@ function App() {
     }
 
     if (finished) {
+      const percentage = totalPoints > 0 ? Math.round((earnedPoints / totalPoints) * 100) : 0
       const unresolvedItems = session.items.filter((item) => {
         const attempt = attempts[itemId(item)]
         return !attempt || attempt.status === 'incorrect' || attempt.status === 'unknown'
@@ -500,7 +517,13 @@ function App() {
         <main className="app-shell">
           <section className="result-panel">
             <p className="eyebrow">{session.title}</p>
-            <h1>Rezultat</h1>
+            <div className="result-summary">
+              <h1>Rezultat</h1>
+              <div className="result-percent">
+                <span>{percentage}%</span>
+                <small>{resultMessage(percentage)}</small>
+              </div>
+            </div>
             <div className="score-grid">
               <div>
                 <span>{earnedPoints}</span>
@@ -537,15 +560,15 @@ function App() {
             </div>
 
             <div className="action-row">
-              <button className="primary-button" type="button" onClick={leaveSession}>
-                Domov
-              </button>
               <button
-                className="secondary-button"
+                className="primary-button"
                 type="button"
                 onClick={() => startSession(session.kind, shuffle(session.items))}
               >
                 Ponovi serijo
+              </button>
+              <button className="secondary-button" type="button" onClick={leaveSession}>
+                Nazaj na začetek
               </button>
             </div>
           </section>
@@ -571,6 +594,9 @@ function App() {
     const needsSelfCheck = !canAutoCheck
     const hasSelection = selectedOptions.length > 0
     const canSubmit = canAutoCheck ? hasSelection : textAnswer.trim().length > 0 || !submitted
+    const questionPanelClass = currentAttempt
+      ? `question-panel question-panel--${currentAttempt.status}`
+      : 'question-panel'
     return (
       <main className="app-shell">
         <section className="session-layout">
@@ -600,7 +626,7 @@ function App() {
             </div>
           </aside>
 
-          <article className="question-panel">
+          <article className={questionPanelClass}>
             <div className="meta-row">
               {question ? (
                 <>
@@ -634,6 +660,17 @@ function App() {
                 Vir: {sourceLabel(task.source)}.
               </div>
             ) : null}
+
+            <div className="question-heading">
+              <span>
+                {question
+                  ? `Vprašanje ${question.questionNumber}`
+                  : task
+                    ? `Strukturirana naloga ${task.taskNumber}`
+                    : `Naloga ${currentIndex + 1}`}
+              </span>
+              <h2>{question ? categoryLabel(question.category) : task ? categoryLabel(task.category) : session.title}</h2>
+            </div>
 
             <pre className="prompt-text">{formatBlock(prompt)}</pre>
 
@@ -754,11 +791,10 @@ function App() {
     <main className="app-shell">
       <section className="home-hero">
         <div>
-          <p className="eyebrow">Matura računalništvo kviz</p>
-          <h1>Trening za poklicno maturo iz računalništva</h1>
+          <p className="eyebrow">Kviz za poklicno maturo</p>
+          <h1>Matura računalništvo</h1>
           <p className="lead">
-            Kviz uporablja samo vprašanja in rešitve iz priloženega paketa: {maturaShortQuestions.length}{' '}
-            kratkih vprašanj in {structuredTasks.length} strukturiranih nalog.
+            Treniraj vprašanja, računske naloge in strukturirane naloge iz preteklih matur.
           </p>
         </div>
         <div className="status-card">
