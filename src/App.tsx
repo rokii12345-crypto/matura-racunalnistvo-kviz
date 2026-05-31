@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
+import { maturaAnswerExplanationById } from './data/matura/maturaAnswerExplanations'
 import { maturaShortQuestions } from './data/matura/maturaShortQuestions'
 import structuredTasksJson from './data/matura/matura_structured_tasks_raw.json'
 import type { MaturaShortQuestion, MaturaStructuredTask } from './data/matura/maturaQuestionTypes'
@@ -562,6 +563,9 @@ function App() {
     const task = item.kind === 'structured' ? item.task : null
     const prompt = question?.prompt ?? task?.promptText ?? ''
     const solution = question ? question.answer : task?.solutionText ?? ''
+    const answerExplanation = question
+      ? maturaAnswerExplanationById[question.id]?.shortExplanation
+      : undefined
     const gradingNotes = question ? question.gradingNotes : task?.solutionText ?? ''
     const canAutoCheck = question ? isMultipleChoice(question) : false
     const needsSelfCheck = !canAutoCheck
@@ -717,6 +721,13 @@ function App() {
 
                 <h2>Pravilna rešitev</h2>
                 <pre>{formatBlock(solution)}</pre>
+
+                {answerExplanation ? (
+                  <>
+                    <h2>Kratka razlaga</h2>
+                    <pre>{formatBlock(answerExplanation)}</pre>
+                  </>
+                ) : null}
 
                 <h2>Navodila za ocenjevanje</h2>
                 <pre>{formatBlock(gradingNotes)}</pre>
