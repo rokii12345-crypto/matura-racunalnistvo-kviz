@@ -1,73 +1,107 @@
-# React + TypeScript + Vite
+# Matura Računalništvo - Kviz 📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interaktivna spletna aplikacija za učenje in preverjanje znanja za maturo iz računalništva. Aplikacija je namenjena dijakom, ki se pripravljajo na maturo in jim pomaga pri ponavljanju in testiranju znanja.
 
-Currently, two official plugins are available:
+🌐 **Živa aplikacija**: [matura-racunalnistvo-kviz.vercel.app](https://matura-racunalnistvo-kviz.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Značilnosti ✨
 
-## React Compiler
+- 📝 Interaktivni kviz z raznovrstnimi vprašanji
+- 📊 Povratne informacije in rezultati
+- 🎯 Tematske skupine vprašanj
+- 📱 Responziven dizajn za mobilne naprave
+- ⚡ Hitra in gladka uporabniška izkušnja
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tehnologije 🛠️
 
-## Expanding the ESLint configuration
+- **Frontend**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: CSS/TailwindCSS
+- **Hosting**: Vercel
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Hitri start 🚀
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Namestitev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+# Kloniraj repo
+git clone https://github.com/rokii12345-crypto/matura-racunalnistvo-kviz.git
+cd matura-racunalnistvo-kviz
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Namesti dependencije
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Razvoj
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Zaženi razvojni strežnik (http://localhost:5173)
+npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Lint kode
+npm run lint
+
+# Predogled build-a
+npm run preview
 ```
+
+### Produkcija
+
+```bash
+# Gradnja
+npm run build
+
+# Rezultat je v `dist/` mapi
+```
+
+## Struktura projekta 📁
+
+```
+matura-racunalnistvo-kviz/
+├── public/           # Statični viri
+├── src/              # React komponente in logika
+│   ├── components/   # React komponente
+│   ├── pages/        # Strani aplikacije
+│   ├── App.tsx       # Glavna komponenta
+│   └── main.tsx      # Vhodni punkt
+├── package.json      # Dependencije
+├── tsconfig.json     # TypeScript konfiguracija
+└── vite.config.ts    # Vite konfiguracija
+```
+
+## Podatki o kvizu 📋
+
+Kviz vsebuje vprašanja iz naslednjih tematskih enot:
+
+- Osnove informatike
+- Algoritmika
+- Podatkovne strukture
+- Programiranje
+- Mrežni sistemi
+- Baze podatkov
+- Informacijska varnost
+- in druge
+
+## Razvoj 👨‍💻
+
+Projekt je še v razvoju. Vabljeni so prispevki!
+
+### Kako prispevati
+
+1. Forka repo
+2. Ustvari feature branch (`git checkout -b feature/nova-funkcionalnost`)
+3. Commit svoje spremembe (`git commit -m 'Dodaj novo funkcionalnost'`)
+4. Push na branch (`git push origin feature/nova-funkcionalnost`)
+5. Odpri Pull Request
+
+## Licence 📄
+
+Projekt je dostopen pod MIT licenco.
+
+## Kontakt 📧
+
+Vprašanja ali sugestije? Odpri issue ali se javi na GitHub.
+
+---
+
+Srečno s pripravami na maturo! 🎓
